@@ -1,22 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import { getgreat } from '../redux/greetingSlice';
+import { getmsn } from '../redux/greetingSlice';
 
 const Greeting = () => {
-  const dataState = useSelector((state) => state);
+  const dataState = useSelector((state) => state.greeting);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getgreat());
+    dispatch(getmsn());
   }, [dispatch]);
-
   return (
     <div>
-      <h1>Hello from Create React App</h1>
-      <p>
-        {dataState.greeting.message}
-        {' '}
-        I am in a React Component!
-      </p>
+      <h1>{dataState.greeting}</h1>
     </div>
   );
 };

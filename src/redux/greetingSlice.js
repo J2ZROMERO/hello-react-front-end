@@ -8,7 +8,7 @@ const initialState = {
 
 export const getmsn = createAsyncThunk(
   GETTED_MSN, async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/hello');
+    const response = await fetch('http://127.0.0.1:5000/greetings/show');
     const data = await response.json();
     return data;
   },
